@@ -19,3 +19,12 @@ export const getAnalytics=async (api_key = '') => {
         return null;
     }
 }
+
+export const getUserPlans = async () => {
+    try {
+        let resp = await axios.get('/user-plans')
+        return resp.data;
+    } catch (error) {
+        console.log(error);
+    }
+};
